@@ -1,3 +1,1 @@
-// tesst
-#include <stio.h>
-
+//matic je bil kle in je pokvaru use
