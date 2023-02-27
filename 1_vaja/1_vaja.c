@@ -24,7 +24,7 @@ int main()
     int mesec[38];
     prvi_dan--;
     int x = 1;
-    for (int i = 0; i <= (31 + prvi_dan); i++)
+    for (int i = 0; i <= (stdni + prvi_dan); i++)
     {
         if (i < prvi_dan)
         {
