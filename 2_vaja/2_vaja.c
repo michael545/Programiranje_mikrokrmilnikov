@@ -17,7 +17,7 @@ double kvadratni_koren(int stevilo)
         i++;
     }
     double x_0 = (i + i - 1) / 2.0;
-    x_0 = 1;
+    //x_0 = 1;
     // printf("%lf", x_0);
     double x_1 = x_0 - (x_0 * x_0 - stevilo) / (2.0 * x_0);
     while (fabs(x_1 - x_0) > 0.00001)
