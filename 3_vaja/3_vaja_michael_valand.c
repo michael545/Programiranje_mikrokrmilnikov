@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <complex.h>
+#include "bitmap.h" //lib import
+#include "bitmap.c" //lib2 import
 
 int vrednost_konvergence(float a, float b)
 {
@@ -9,9 +11,9 @@ int vrednost_konvergence(float a, float b)
     float complex x_0 = a + b * I;
     // printf("%lf | %lf \n", creal(x_0), cimag(x_0));
     float complex x_1 = x_0 - ((cpow(x_0, 3) - 1) / (3 * cpow(x_0, 2)));
-    printf("%f | %f\n", creal(x_1), cimag(x_1));
+    // printf("%f | %f\n", creal(x_1), cimag(x_1));
     int stevilo_iteracij = 0;
-    printf("%d\n", stevilo_iteracij);
+    // printf("%d\n", stevilo_iteracij);
     while (1)
     {
         x_0 = x_1;
@@ -37,24 +39,24 @@ int vrednost_konvergence(float a, float b)
     return 0;
 }
 
+unsigned char bitna_slika[1000][1000];
 int main()
 {
 
-    int bitna_slika[1000][1000];
-    int *arrayPtr;
-    arrayPtr = (int *)malloc(1000000 * sizeof(int));
+    // int *arrayPtr;
+
+    // int x_int = 0;
     for (int i = -500; i < 500; i++)
     {
         for (int j = -500; j < 500; j++)
         {
             // resi enacbo in zapisi v tabelo 1000x1000
             int konver_proti = vrednost_konvergence((float)i, (float)j);
-            printf("%i", konver_proti);
-            if (j > 0 && i > 0)
-            bitna_slika[i][j] = konver_proti;
+            bitna_slika[i + 500][j + 500] = (char)konver_proti;
         }
     }
     // int x = vrednost_konvergence(-1.0, 1.0);
     //  printf("%i", x);
+    shraniBMP(bitna_slika, 1000, 1000, "skica.bmp");
     return 0;
 }
