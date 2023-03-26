@@ -57,6 +57,6 @@ int main()
     }
     // int x = vrednost_konvergence(-1.0, 1.0);
     //  printf("%i", x);
-    shraniBMP(bitna_slika, 1000, 1000, "skica.bmp");
+    shraniBMP(bitna_slika, 1000, 1000, "skica2.bmp");
     return 0;
 }
