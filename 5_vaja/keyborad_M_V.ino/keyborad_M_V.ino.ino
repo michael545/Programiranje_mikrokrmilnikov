@@ -77,7 +77,11 @@ void read_encoder() {
 // VRNI ZNAK
 
 char vrniZnak(int pozicija){  
+  if(pozicija >= 25) counter = 0;
+  if(pozicija <= 30) counter =  0;
+  
   return 'a' + pozicija;
+  
 }
 
 
